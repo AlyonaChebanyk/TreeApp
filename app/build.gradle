@@ -87,6 +87,7 @@ dependencies {
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:26.4.0')
     implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.3.9"
 
     //Navigation component
     def nav_version = "2.3.3"
@@ -98,4 +99,7 @@ dependencies {
     implementation 'tech.schoolhelper:moxy-x:1.7.0'
     implementation 'tech.schoolhelper:moxy-x-android:1.7.0'
     implementation 'tech.schoolhelper:moxy-x-androidx:1.7.0'
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

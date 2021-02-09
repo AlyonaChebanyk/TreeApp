@@ -1,6 +1,7 @@
 package com.example.treeapp
 
 import android.app.Application
+import com.example.treeapp.di.appModule
 import com.example.treeapp.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -14,9 +15,10 @@ class TreeApp : Application() {
         startKoin {
             androidContext(this@TreeApp)
             modules(
-                    listOf(
-                            networkModule
-                    )
+                listOf(
+                    networkModule,
+                    appModule
+                )
             )
         }
 

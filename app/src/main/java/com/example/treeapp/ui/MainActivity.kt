@@ -9,6 +9,7 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.treeapp.R
+import com.example.treeapp.Repository
 import com.example.treeapp.network.ApiService
 import com.example.treeapp.util.FileUtil
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
 //        loadData()
 
@@ -219,4 +221,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onBackPressed() {}
 }

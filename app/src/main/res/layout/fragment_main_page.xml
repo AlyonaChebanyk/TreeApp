@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/treeImageView"
         android:layout_width="250dp"
-        android:layout_height="320dp"
+        android:layout_height="300dp"
         android:src="@drawable/tree_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,18 +23,19 @@
         android:background="#CCC"
         android:layout_marginHorizontal="20dp"
         app:layout_constraintTop_toBottomOf="@id/treeImageView"
-        android:layout_marginVertical="20dp"/>
+        android:layout_marginVertical="10dp"/>
 
     <TextView
         android:id="@+id/atlasTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="Atlas"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/treeImageView"/>
+        app:layout_constraintTop_toBottomOf="@id/treeImageView"
+        app:layout_constraintBottom_toTopOf="@id/recognitionTextView"/>
 
     <View
         android:layout_width="match_parent"

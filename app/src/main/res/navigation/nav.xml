@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_recognition" />
     <fragment
         android:id="@+id/testFragment"
-        android:name="com.example.treeapp.ui.TestFragment"
+        android:name="com.example.treeapp.ui.test_page.test_passing.TestFragment"
         android:label="fragment_test"
         tools:layout="@layout/fragment_test" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/testResultFragment"
-        android:name="com.example.treeapp.ui.TestResultFragment"
+        android:name="com.example.treeapp.ui.test_page.TestResultFragment"
         android:label="fragment_test_result"
         tools:layout="@layout/fragment_test_result" />
 </navigation>
