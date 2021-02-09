@@ -1,38 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.test_page.TestResultFragment"
+    android:background="@color/background_color"
     android:orientation="vertical"
-    android:background="@color/background_color">
+    tools:context=".ui.test_page.test_result.TestResultFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
                 android:text="Result"
-                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:id="@+id/resultTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="7"
                 android:textSize="24sp"
-                android:gravity="right"
-                android:text="7/10"
-                android:layout_marginEnd="20dp"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/questionAmountTextView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/questionAmountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="/10"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -40,43 +52,49 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#CCC"/>
+        android:background="#CCC" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <androidx.recyclerview.widget.RecyclerView
-                app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/testResultRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/test_result_item"/>
-            <Button
-                app:layout_constraintWidth_percent="0.499"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:textColor="#706E67"
-                android:backgroundTint="@color/background_color"
-                app:layout_constraintTop_toBottomOf="@id/testResultRecyclerView"
-                android:layout_marginTop="10dp"
-                android:text="Pass test again"
-                android:textAllCaps="false"/>
-            <Button
-                app:layout_constraintWidth_percent="0.499"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:textColor="#706E67"
-                android:backgroundTint="@color/background_color"
-                android:textAllCaps="false"
-                app:layout_constraintTop_toBottomOf="@id/testResultRecyclerView"
-                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/test_result_item" />
 
-                android:text="Back to main page"/>
+            <Button
+                android:id="@+id/passTestAgainButton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/background_color"
+                android:text="Pass test again"
+                android:textAllCaps="false"
+                android:textColor="#706E67"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/testResultRecyclerView"
+                app:layout_constraintWidth_percent="0.499" />
+
+            <Button
+                android:id="@+id/backToMainPageButton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/background_color"
+                android:text="Back to main page"
+                android:textAllCaps="false"
+                android:textColor="#706E67"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/testResultRecyclerView"
+
+                app:layout_constraintWidth_percent="0.499" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

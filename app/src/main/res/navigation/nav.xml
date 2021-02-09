@@ -33,7 +33,14 @@
     </fragment>
     <fragment
         android:id="@+id/testResultFragment"
-        android:name="com.example.treeapp.ui.test_page.TestResultFragment"
+        android:name="com.example.treeapp.ui.test_page.test_result.TestResultFragment"
         android:label="fragment_test_result"
-        tools:layout="@layout/fragment_test_result" />
+        tools:layout="@layout/fragment_test_result" >
+        <action
+            android:id="@+id/action_testResultFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+        <action
+            android:id="@+id/action_testResultFragment_to_testFragment"
+            app:destination="@id/testFragment" />
+    </fragment>
 </navigation>

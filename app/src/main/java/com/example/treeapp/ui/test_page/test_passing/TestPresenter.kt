@@ -50,78 +50,56 @@ class TestPresenter(private val repository: Repository) : MvpPresenter<TestView>
                 viewState.goToResultScreen(bundle)
             }
             answer.isEmpty() -> {
-                currentVariants = repository.getSpecies().shuffled().take(4)
-                val fourSpeciesNames = mutableListOf<String>()
-                for (species in currentVariants) {
-                    if (!species.commonName.isNullOrEmpty())
-                        fourSpeciesNames.add(species.commonName)
-                    else
-                        fourSpeciesNames.add(species.scientificName)
-                }
-                currentCorrectSpecies = currentVariants.shuffled().take(1)[0]
-                val habitImages = mutableListOf(currentCorrectSpecies.imageUrl)
-                if (currentCorrectSpecies.images.habit != null)
-                    for (habitImg in currentCorrectSpecies.images.habit!!)
-                        habitImages.add(habitImg.imageUrl)
-
-                currentHabitImage = habitImages.shuffled().take(1)[0]
-                currentLeafImage =
-                    currentCorrectSpecies.images.leaf?.shuffled()?.take(1)?.get(0)?.imageUrl ?: ""
-                questionNumber += 1
-                imagesHabitResult[questionNumber] = currentHabitImage
-                imagesLeafResult[questionNumber] = currentLeafImage
-                if (!currentCorrectSpecies.commonName.isNullOrEmpty())
-                    correctAnswers[questionNumber] = currentCorrectSpecies.commonName!!
-                else
-                    correctAnswers[questionNumber] = currentCorrectSpecies.scientificName
-                withContext(Dispatchers.Main) {
-                    viewState.displayData(
-                        currentHabitImage,
-                        fourSpeciesNames,
-                        questionNumber
-                    )
-                }
+                setNewData()
             }
             else -> {
                 if (answer != currentCorrectSpecies.commonName && answer != currentCorrectSpecies.scientificName) {
-                    for(species in currentVariants){
-                        if (species.commonName == answer || species.scientificName == answer){
+                    for (species in currentVariants) {
+                        if (species.commonName == answer || species.scientificName == answer) {
                             wrongAnswers[questionNumber] = answer
                         }
                     }
                 }
-
-                currentVariants = repository.getSpecies().shuffled().take(4)
-                val fourSpeciesNames = mutableListOf<String>()
-                for (species in currentVariants) {
-                    if (!species.commonName.isNullOrEmpty())
-                        fourSpeciesNames.add(species.commonName)
-                    else
-                        fourSpeciesNames.add(species.scientificName)
-                }
-                currentCorrectSpecies = currentVariants.shuffled().take(1)[0]
-                val habitImages = mutableListOf(currentCorrectSpecies.imageUrl)
-                if (currentCorrectSpecies.images.habit != null)
-                    for (habitImg in currentCorrectSpecies.images.habit!!)
-                        habitImages.add(habitImg.imageUrl)
-                currentHabitImage = habitImages.shuffled().take(1)[0]
-                currentLeafImage =
-                    currentCorrectSpecies.images.leaf?.shuffled()?.take(1)?.get(0)?.imageUrl ?: ""
-                questionNumber += 1
-                imagesHabitResult[questionNumber] = currentHabitImage
-                imagesLeafResult[questionNumber] = currentLeafImage
-                if (!currentCorrectSpecies.commonName.isNullOrEmpty())
-                    correctAnswers[questionNumber] = currentCorrectSpecies.commonName!!
-                else
-                    correctAnswers[questionNumber] = currentCorrectSpecies.scientificName
-                withContext(Dispatchers.Main) {
-                    viewState.displayData(
-                        currentHabitImage,
-                        fourSpeciesNames,
-                        questionNumber
-                    )
-                }
+                setNewData()
             }
+        }
+    }
+
+    private suspend fun setNewData() {
+        currentVariants = repository.getSpecies().shuffled().take(4)
+        val fourSpeciesNames = mutableListOf<String>()
+        for (species in currentVariants) {
+            if (!species.commonName.isNullOrEmpty())
+                fourSpeciesNames.add(species.commonName)
+            else
+                fourSpeciesNames.add(species.scientificName)
+        }
+        currentCorrectSpecies = currentVariants.shuffled().take(1)[0]
+        val habitImages = mutableListOf(currentCorrectSpecies.imageUrl)
+        if (currentCorrectSpecies.images.habit != null)
+            for (habitImg in currentCorrectSpecies.images.habit!!)
+                habitImages.add(habitImg.imageUrl)
+        currentHabitImage = habitImages.shuffled().take(1)[0]
+        currentLeafImage =
+            currentCorrectSpecies.images.leaf?.shuffled()?.take(1)?.get(0)?.imageUrl ?: ""
+
+        if (currentHabitImage.isNullOrEmpty() || currentLeafImage.isNullOrEmpty()){
+            setNewData()
+            return
+        }
+        questionNumber += 1
+        imagesHabitResult[questionNumber] = currentHabitImage
+        imagesLeafResult[questionNumber] = currentLeafImage
+        if (!currentCorrectSpecies.commonName.isNullOrEmpty())
+            correctAnswers[questionNumber] = currentCorrectSpecies.commonName!!
+        else
+            correctAnswers[questionNumber] = currentCorrectSpecies.scientificName
+        withContext(Dispatchers.Main) {
+            viewState.displayData(
+                currentHabitImage,
+                fourSpeciesNames,
+                questionNumber
+            )
         }
     }
 }
