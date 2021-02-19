@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.RecognitionFragment"
+    android:background="@color/background_color">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/recognitionToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="Recognition"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCC"
+        app:layout_constraintTop_toBottomOf="@id/recognitionToolbar"/>
+
+    <ImageView
+        android:id="@+id/leafImageView"
+        android:layout_marginTop="150dp"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_leaf"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCC"
+        app:layout_constraintTop_toBottomOf="@id/leafImageView"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/takePhotoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take photo"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/leafImageView"
+        android:textSize="22sp"
+        android:layout_marginTop="40dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCC"
+        app:layout_constraintTop_toBottomOf="@id/takePhotoTextView"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/galleryTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gallery"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/takePhotoTextView"
+        android:textSize="22sp"
+        android:layout_marginTop="40dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCC"
+        app:layout_constraintTop_toBottomOf="@id/galleryTextView"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

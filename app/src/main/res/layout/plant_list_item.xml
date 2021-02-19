@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="20dp"
+    android:background="@color/background_color">
+
+    <ImageView
+        android:id="@+id/plantImageView"
+        android:layout_width="180dp"
+        android:layout_height="220dp"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plantNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Silver linden"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/plantImageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plantDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:paddingEnd="190dp"
+        android:text="Tilia tomentosa is a deciduous tree growing to 20–35 m (66–115 ft) tall, with a trunk up to 2 m (7 ft) in diameter. The leaves are alternately arranged, rounded to triangular-ovate, 4–13 cm long and broad with a 2.5–4 cm petiole, green and mostly hairless above,  ... "
+        app:layout_constraintStart_toEndOf="@id/plantImageView"
+        app:layout_constraintTop_toBottomOf="@id/plantNameTextView" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#CCC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/plantImageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

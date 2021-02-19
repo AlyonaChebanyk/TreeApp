@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainPageFragment_to_recognitionFragment"
             app:destination="@id/recognitionFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_atlasFragment"
+            app:destination="@id/atlasFragment" />
     </fragment>
     <fragment
         android:id="@+id/recognitionFragment"
@@ -42,5 +45,14 @@
         <action
             android:id="@+id/action_testResultFragment_to_testFragment"
             app:destination="@id/testFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/atlasFragment"
+        android:name="com.example.treeapp.ui.atlas.AtlasFragment"
+        android:label="fragment_atlas"
+        tools:layout="@layout/fragment_atlas" >
+        <action
+            android:id="@+id/action_atlasFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
     </fragment>
 </navigation>
