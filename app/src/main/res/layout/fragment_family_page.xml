@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".ui.atlas.family.family_page.FamilyPageFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/familyPageToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_arrow" />
+
+        <TextView
+            android:id="@+id/familyNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Mulberry family"
+            android:textSize="24sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/familyPageToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="?android:actionBarSize">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/familyImageView"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scaleType="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/familyDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Family of flowering plants comprising about 38 genera and over 1100 species.[2] Most are widespread in tropical and subtropical regions, less so in temperate climates; however, their distribution is cosmopolitan overall. The only synapomorphy within the Moraceae is presence of laticifers and milky sap in all parenchymatous tissues, but generally useful field characters include two carpels sometimes with one reduced, compound inconspicuous flowers, and compound fruits.[3] The family includes well-known plants such as the fig, banyan, breadfruit, mulberry, and Osage orange. The 'flowers' of Moraceae are often pseudanthia (reduced inflorescences)."
+                app:layout_constraintTop_toBottomOf="@id/familyImageView" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toBottomOf="@id/familyDescriptionTextView" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/familyDescriptionTextView"
+                android:text="Family common name: "
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/familyCommonNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/text4"
+                app:layout_constraintTop_toTopOf="@id/text4"
+                android:text="Mulberry family"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"/>
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/text4"
+                android:text="Scientific name: "
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/familyScientificNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/text5"
+                app:layout_constraintTop_toTopOf="@id/text5"
+                android:text="Moraceae"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"/>
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Genus:"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text5" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/genusListRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toBottomOf="@id/text2"
+                tools:listitem="@layout/list_item" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toBottomOf="@id/genusListRecyclerView" />
+
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Images:"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/genusListRecyclerView"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                app:layout_constraintTop_toBottomOf="@id/text3"
+                android:id="@+id/familyImagesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/image_item"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

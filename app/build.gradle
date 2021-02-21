@@ -4,11 +4,16 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'org.jetbrains.kotlin.android.extensions'
 }
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+
+    androidExtensions {
+        experimental = true
+    }
 
     defaultConfig {
         applicationId "com.example.treeapp"

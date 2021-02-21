@@ -54,5 +54,17 @@
         <action
             android:id="@+id/action_atlasFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment" />
+        <action
+            android:id="@+id/action_atlasFragment_to_familyPageFragment"
+            app:destination="@id/familyPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/familyPageFragment"
+        android:name="com.example.treeapp.ui.atlas.family.family_page.FamilyPageFragment"
+        android:label="fragment_family_page"
+        tools:layout="@layout/fragment_family_page" >
+        <action
+            android:id="@+id/action_familyPageFragment_to_atlasFragment"
+            app:destination="@id/atlasFragment" />
     </fragment>
 </navigation>
