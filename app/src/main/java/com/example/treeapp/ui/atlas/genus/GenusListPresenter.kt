@@ -24,5 +24,4 @@ class GenusListPresenter(private val repository: Repository): MvpPresenter<Genus
             }
         }
     }
-
 }

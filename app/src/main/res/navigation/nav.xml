@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_atlasFragment_to_familyPageFragment"
             app:destination="@id/familyPageFragment" />
+        <action
+            android:id="@+id/action_atlasFragment_to_genusPageFragment"
+            app:destination="@id/genusPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/familyPageFragment"
@@ -65,6 +68,15 @@
         tools:layout="@layout/fragment_family_page" >
         <action
             android:id="@+id/action_familyPageFragment_to_atlasFragment"
+            app:destination="@id/atlasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/genusPageFragment"
+        android:name="com.example.treeapp.ui.atlas.genus.genus_page.GenusPageFragment"
+        android:label="fragment_genus_page"
+        tools:layout="@layout/fragment_genus_page" >
+        <action
+            android:id="@+id/action_genusPageFragment_to_atlasFragment"
             app:destination="@id/atlasFragment" />
     </fragment>
 </navigation>

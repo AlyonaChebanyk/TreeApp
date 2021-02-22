@@ -5,6 +5,7 @@ import com.arellomobile.mvp.MvpPresenter
 import com.example.treeapp.entities.Family
 import com.example.treeapp.ui.atlas.ImageListAdapter
 import com.example.treeapp.ui.atlas.ListAdapter
+import timber.log.Timber
 
 @InjectViewState
 class FamilyPagePresenter: MvpPresenter<FamilyPageView>() {
@@ -19,6 +20,7 @@ class FamilyPagePresenter: MvpPresenter<FamilyPageView>() {
         viewState.setGenusListAdapter(genusListAdapter)
         genusListAdapter.notifyDataSetChanged()
         imageListAdapter = ImageListAdapter(family.images.shuffled().take(10))
+        viewState.setImageListAdapter(imageListAdapter)
         imageListAdapter.notifyDataSetChanged()
     }
 
