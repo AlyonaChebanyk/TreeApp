@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.treeapp.R
 import com.example.treeapp.entities.Species
 
-class SpeciesListAdapter(private val speciesList: MutableList<Species>): RecyclerView.Adapter<GenusListViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GenusListViewHolder {
-        return GenusListViewHolder(
+class SpeciesListAdapter(private val speciesList: MutableList<Species>): RecyclerView.Adapter<SpeciesListViewHolder>(){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpeciesListViewHolder {
+        return SpeciesListViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.plant_list_item,
                 parent,
@@ -17,7 +17,7 @@ class SpeciesListAdapter(private val speciesList: MutableList<Species>): Recycle
         )
     }
 
-    override fun onBindViewHolder(holder: GenusListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SpeciesListViewHolder, position: Int) {
         holder.bind(speciesList[position])
     }
 

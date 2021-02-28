@@ -7,6 +7,7 @@ import com.example.treeapp.ui.atlas.family.family_page.FamilyPagePresenter
 import com.example.treeapp.ui.atlas.genus.GenusListPresenter
 import com.example.treeapp.ui.atlas.genus.genus_page.GenusPagePresenter
 import com.example.treeapp.ui.atlas.species.SpeciesListPresenter
+import com.example.treeapp.ui.atlas.species.species_page.SpeciesPagePresenter
 import com.example.treeapp.ui.test_page.test_passing.TestPresenter
 import com.example.treeapp.ui.test_page.test_result.TestResultPresenter
 import org.koin.dsl.module
@@ -19,6 +20,7 @@ val appModule = module {
     factory { SpeciesListPresenter(get()) }
     factory { FamilyPagePresenter() }
     factory { GenusPagePresenter() }
+    factory { SpeciesPagePresenter() }
 
     single { Repository() }
 }

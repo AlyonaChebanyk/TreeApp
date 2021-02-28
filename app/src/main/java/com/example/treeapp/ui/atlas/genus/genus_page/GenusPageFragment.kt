@@ -51,7 +51,7 @@ class GenusPageFragment : MvpAppCompatFragment(), GenusPageView {
     }
 
     override fun setImage(url: String) {
-        Picasso.get().load(url).into(familyImageView)
+        Picasso.get().load(url).into(genusImageView)
     }
 
     override fun setSpeciesListAdapter(genusAdapter: ListAdapter) {
