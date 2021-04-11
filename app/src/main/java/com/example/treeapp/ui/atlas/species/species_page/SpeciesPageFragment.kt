@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import com.bumptech.glide.Glide
 import com.example.treeapp.R
 import com.example.treeapp.entities.Species
 import com.example.treeapp.ui.atlas.ImageListAdapter
@@ -51,7 +52,7 @@ class SpeciesPageFragment : MvpAppCompatFragment(), SpeciesPageView {
     }
 
     override fun setImage(url: String) {
-        Picasso.get().load(url).into(speciesImageView)
+        Glide.with(this).load(url).into(speciesImageView)
     }
 
     override fun setDescription(description: String) {

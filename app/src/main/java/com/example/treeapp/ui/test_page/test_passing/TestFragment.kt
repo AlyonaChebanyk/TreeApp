@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import com.bumptech.glide.Glide
 import com.example.treeapp.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_test.*
@@ -34,11 +35,11 @@ class TestFragment : MvpAppCompatFragment(), TestView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         habitTextView.setOnClickListener {
-            Picasso.get().load(presenter.currentHabitImage).into(plantImageView)
+            Glide.with(view).load(presenter.currentHabitImage).into(plantImageView)
         }
         leafTextView.setOnClickListener {
             if (presenter.currentLeafImage.isNotEmpty())
-                Picasso.get().load(presenter.currentLeafImage).into(plantImageView)
+                Glide.with(view).load(presenter.currentLeafImage).into(plantImageView)
         }
         answer1Button.setOnClickListener {
             GlobalScope.launch {
@@ -63,7 +64,7 @@ class TestFragment : MvpAppCompatFragment(), TestView {
     }
 
     override fun displayData(imageUrl: String?, variantsList: List<String>, questionNumber: Int) {
-        Picasso.get().load(imageUrl).into(plantImageView)
+        Glide.with(this).load(imageUrl).into(plantImageView)
         questionNumberTextView.text = questionNumber.toString()
         answer1Button.text = variantsList[0]
         answer2Button.text = variantsList[1]

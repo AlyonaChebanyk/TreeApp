@@ -33,7 +33,7 @@ class Repository {
     suspend fun getFamilies(): MutableList<Family> {
         return if (familyList.isNotEmpty())
             familyList
-        else{
+        else {
             db.collection("families").get()
                 .addOnSuccessListener { snapshot ->
                     snapshot.forEach { doc ->
@@ -47,7 +47,7 @@ class Repository {
     suspend fun getGenusList(): MutableList<Genus> {
         return if (genusList.isNotEmpty())
             genusList
-        else{
+        else {
             db.collection("genus").get()
                 .addOnSuccessListener { snapshot ->
                     snapshot.forEach { doc ->
@@ -56,5 +56,21 @@ class Repository {
                 }.await()
             genusList
         }
+    }
+
+    suspend fun getSpeciesByScientificName(name: String): Species? {
+        if (speciesList.isEmpty()) {
+            db.collection("species").get()
+                .addOnSuccessListener { snapshot ->
+                    snapshot.forEach { doc ->
+                        speciesList.add(doc.toObject())
+                    }
+                }.await()
+        }
+        for (species in speciesList){
+            if (species.scientificName == name)
+                return species
+        }
+        return null
     }
 }

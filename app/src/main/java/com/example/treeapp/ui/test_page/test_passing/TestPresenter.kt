@@ -78,10 +78,10 @@ class TestPresenter(private val repository: Repository) : MvpPresenter<TestView>
         val habitImages = mutableListOf(currentCorrectSpecies.imageUrl)
         if (currentCorrectSpecies.images.habit != null)
             for (habitImg in currentCorrectSpecies.images.habit!!)
-                habitImages.add(habitImg.imageUrl)
+                habitImages.add(habitImg)
         currentHabitImage = habitImages.shuffled().take(1)[0]
         currentLeafImage =
-            currentCorrectSpecies.images.leaf?.shuffled()?.take(1)?.get(0)?.imageUrl ?: ""
+            currentCorrectSpecies.images.leaf?.shuffled()?.take(1)?.get(0) ?: ""
 
         if (currentHabitImage.isNullOrEmpty() || currentLeafImage.isNullOrEmpty()){
             setNewData()

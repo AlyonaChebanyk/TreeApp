@@ -27,35 +27,35 @@ class SpeciesPagePresenter : MvpPresenter<SpeciesPageView>() {
         if (species.images.habit.isNullOrEmpty())
             viewState.hideHabitLayout()
         else{
-            habitAdapter = ImageListAdapter(species.images.habit.map { it.imageUrl })
+            habitAdapter = ImageListAdapter(species.images.habit)
             habitAdapter.notifyDataSetChanged()
         }
 
         if (species.images.bark.isNullOrEmpty())
             viewState.hideBarkLayout()
         else{
-            barkAdapter = ImageListAdapter(species.images.bark.map { it.imageUrl })
+            barkAdapter = ImageListAdapter(species.images.bark)
             barkAdapter.notifyDataSetChanged()
         }
 
         if (species.images.flower.isNullOrEmpty())
             viewState.hideFlowerLayout()
         else{
-            flowerAdapter = ImageListAdapter(species.images.flower.map { it.imageUrl })
+            flowerAdapter = ImageListAdapter(species.images.flower)
             flowerAdapter.notifyDataSetChanged()
         }
 
         if (species.images.fruit.isNullOrEmpty())
             viewState.hideFruitLayout()
         else{
-            fruitAdapter = ImageListAdapter(species.images.fruit.map { it.imageUrl })
+            fruitAdapter = ImageListAdapter(species.images.fruit)
             fruitAdapter.notifyDataSetChanged()
         }
 
         if (species.images.leaf.isNullOrEmpty())
             viewState.hideLeafLayout()
         else{
-            leafAdapter = ImageListAdapter(species.images.leaf.map { it.imageUrl })
+            leafAdapter = ImageListAdapter(species.images.leaf)
             leafAdapter.notifyDataSetChanged()
         }
 

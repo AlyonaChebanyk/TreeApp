@@ -4,6 +4,7 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.treeapp.R
 import com.example.treeapp.entities.Family
 import com.example.treeapp.entities.Genus
@@ -20,7 +21,7 @@ class GenusListViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
                 else
                     genus.description.slice(0..200) + "..."
             val imageUrl = genus.images.shuffled().take(1)[0]
-            Picasso.get().load(imageUrl).into(plantImageView)
+            Glide.with(view).load(imageUrl).into(plantImageView)
 
             setOnClickListener {
                 val bundle = bundleOf("genus" to genus)

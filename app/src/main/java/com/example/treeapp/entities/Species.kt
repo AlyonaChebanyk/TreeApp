@@ -17,14 +17,10 @@ data class Species(
 
 @Parcelize
 data class Images(
-    val habit: MutableList<ImageUrl>? = mutableListOf(),
-    val leaf: MutableList<ImageUrl>? = mutableListOf(),
-    val flower: MutableList<ImageUrl>? = mutableListOf(),
-    val fruit: MutableList<ImageUrl>? = mutableListOf(),
-    val bark: MutableList<ImageUrl>? = mutableListOf()
+    val habit: MutableList<String>? = mutableListOf(),
+    val leaf: MutableList<String>? = mutableListOf(),
+    val flower: MutableList<String>? = mutableListOf(),
+    val fruit: MutableList<String>? = mutableListOf(),
+    val bark: MutableList<String>? = mutableListOf()
 ): Parcelable
 
-@Parcelize
-data class ImageUrl(
-    val imageUrl: String = ""
-): Parcelable

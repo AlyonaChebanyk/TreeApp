@@ -10,6 +10,7 @@ import com.example.treeapp.ui.atlas.species.SpeciesListPresenter
 import com.example.treeapp.ui.atlas.species.species_page.SpeciesPagePresenter
 import com.example.treeapp.ui.test_page.test_passing.TestPresenter
 import com.example.treeapp.ui.test_page.test_result.TestResultPresenter
+import com.example.treeapp.util.ImageFormatter
 import org.koin.dsl.module
 
 val appModule = module {
@@ -23,4 +24,6 @@ val appModule = module {
     factory { SpeciesPagePresenter() }
 
     single { Repository() }
+
+    single{ ImageFormatter() }
 }
