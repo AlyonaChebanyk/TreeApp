@@ -13,7 +13,7 @@
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <LinearLayout
-        android:id="@+id/gesture_layout"
+        android:id="@+id/gestureLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -34,14 +34,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/detected_item"
+                android:id="@+id/recognitionTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/detected_item_value"
+                android:id="@+id/recognitionValueTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
@@ -57,14 +57,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/detected_item1"
+                android:id="@+id/recognition1TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/detected_item1_value"
+                android:id="@+id/recognition1ValueTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
@@ -80,14 +80,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/detected_item2"
+                android:id="@+id/recognition2TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/detected_item2_value"
+                android:id="@+id/recognition2ValueTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"

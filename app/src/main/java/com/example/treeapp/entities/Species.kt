@@ -3,6 +3,7 @@ package com.example.treeapp.entities
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
+// класс вида
 @Parcelize
 data class Species(
     val commonName: String? = "",

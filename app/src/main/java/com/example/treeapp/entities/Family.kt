@@ -3,6 +3,7 @@ package com.example.treeapp.entities
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
+// класс семейства
 @Parcelize
 data class Family(
     val name: String = "",

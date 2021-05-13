@@ -34,9 +34,9 @@ public class ClassifierLeaf extends Classifier {
    * Float model does not need dequantization in the post-processing. Setting mean and std as 0.0f
    * and 1.0f, repectively, to bypass the normalization.
    */
-  private static final float PROBABILITY_MEAN = 0.0f;
+  private static final float PROBABILITY_MEAN = 0.5f;
 
-  private static final float PROBABILITY_STD = 1.0f;
+  private static final float PROBABILITY_STD = 0.5f;
 
   /**
    * Initializes a {@code ClassifierFloatMobileNet}.
@@ -53,12 +53,12 @@ public class ClassifierLeaf extends Classifier {
     // you can download this file from
     // see build.gradle for where to obtain this file. It should be auto
     // downloaded into assets.
-    return "leaf_model.tflite";
+    return "model_2.0.tflite";
   }
 
   @Override
   protected String getLabelPath() {
-    return "leaf_labels.txt";
+    return "leaf_labels_2.0.txt";
   }
 
   @Override

@@ -28,8 +28,7 @@ class MainPageFragment : Fragment() {
             findNavController().navigate(R.id.action_mainPageFragment_to_atlasFragment)
         }
         recognitionTextView.setOnClickListener {
-//            findNavController().navigate(R.id.action_mainPageFragment_to_recognitionFragment)
-            findNavController().navigate(R.id.action_mainPageFragment_to_classifierFragment)
+            findNavController().navigate(R.id.action_mainPageFragment_to_recognitionFragment)
 //            startActivity(Intent(activity, ClassifierActivity::class.java))
         }
     }

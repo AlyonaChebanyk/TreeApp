@@ -14,20 +14,12 @@
             android:id="@+id/action_mainPageFragment_to_testFragment"
             app:destination="@id/testFragment" />
         <action
-            android:id="@+id/action_mainPageFragment_to_recognitionFragment"
-            app:destination="@id/recognitionFragment" />
-        <action
             android:id="@+id/action_mainPageFragment_to_atlasFragment"
             app:destination="@id/atlasFragment" />
         <action
-            android:id="@+id/action_mainPageFragment_to_classifierFragment"
-            app:destination="@id/classifierFragment" />
+            android:id="@+id/action_mainPageFragment_to_recognitionFragment"
+            app:destination="@id/recognitionFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/recognitionFragment"
-        android:name="com.example.treeapp.ui.recognition.RecognitionFragment"
-        android:label="fragment_recognition"
-        tools:layout="@layout/fragment_recognition" />
     <fragment
         android:id="@+id/testFragment"
         android:name="com.example.treeapp.ui.test_page.test_passing.TestFragment"
@@ -95,11 +87,12 @@
             app:destination="@id/atlasFragment" />
     </fragment>
     <fragment
-        android:id="@+id/classifierFragment"
-        android:name="com.example.treeapp.ui.recognition.ClassifierFragment"
-        android:label="ClassifierFragment" >
+        android:id="@+id/recognitionFragment"
+        android:name="com.example.treeapp.ui.recognition.RecognitionFragment"
+        android:label="RecognitionFragment"
+        tools:layout="@layout/tfe_ic_activity_camera">
         <action
-            android:id="@+id/action_classifierFragment_to_speciesPageFragment"
+            android:id="@+id/action_recognitionFragment_to_speciesPageFragment"
             app:destination="@id/speciesPageFragment" />
     </fragment>
 </navigation>

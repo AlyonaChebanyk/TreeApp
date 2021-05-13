@@ -214,7 +214,7 @@ public class CameraConnectionFragment extends Fragment {
   }
 
   /**
-   * Given {@code choices} of {@code Size}s supported by a camera, chooses the smallest one whose
+   * Given {@code choices} of {@code Sizes supported by a camera, chooses the smallest one whose
    * width and height are at least as large as the minimum of both, or an exact match if possible.
    *
    * @param choices The list of sizes that the camera supports for the intended output class

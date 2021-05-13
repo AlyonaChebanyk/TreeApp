@@ -29,7 +29,7 @@ class PlantViewPagerAdapter(activity: FragmentActivity): FragmentStateAdapter(ac
             2 -> SpeciesListFragment().apply {
                 arguments = bundle
             }
-            else -> PlantListFragment()
+            else -> Fragment()
         }
     }
 }

@@ -20,12 +20,14 @@ import static java.lang.Math.min;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
+import android.icu.text.LocaleDisplayNames;
 import android.os.SystemClock;
 import android.os.Trace;
 import android.util.Log;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -112,20 +114,22 @@ public abstract class Classifier {
    * @return A classifier with the desired configuration.
    */
   public static Classifier create(Activity activity, Model model, Device device, int numThreads)
-      throws IOException {
-    if (model == Model.QUANTIZED_MOBILENET) {
-      return new ClassifierQuantizedMobileNet(activity, device, numThreads);
-    } else if (model == Model.FLOAT_MOBILENET) {
-      return new ClassifierFloatMobileNet(activity, device, numThreads);
-    } else if (model == Model.FLOAT_EFFICIENTNET) {
-      return new ClassifierFloatEfficientNet(activity, device, numThreads);
-    } else if (model == Model.QUANTIZED_EFFICIENTNET) {
-      return new ClassifierQuantizedEfficientNet(activity, device, numThreads);
-    } else if (model == Model.LEAF){
-      return new ClassifierLeaf(activity, device, numThreads);
-    } else {
-      throw new UnsupportedOperationException();
-    }
+    throws IOException {
+//    if (model == Model.QUANTIZED_MOBILENET) {
+//      return new ClassifierQuantizedMobileNet(activity, device, numThreads);
+//    } else if (model == Model.FLOAT_MOBILENET) {
+//      return new ClassifierFloatMobileNet(activity, device, numThreads);
+//    } else if (model == Model.FLOAT_EFFICIENTNET) {
+//      return new ClassifierFloatEfficientNet(activity, device, numThreads);
+//    } else if (model == Model.QUANTIZED_EFFICIENTNET) {
+//      return new ClassifierQuantizedEfficientNet(activity, device, numThreads);
+//    } else if (model == Model.LEAF){
+      if (model == Model.LEAF){
+        return new ClassifierLeaf(activity, device, numThreads);
+      }
+      else {
+        throw new UnsupportedOperationException();
+      }
   }
 
   /** An immutable result returned by a Classifier describing what was recognized. */
@@ -219,6 +223,9 @@ public abstract class Classifier {
 
     // Loads labels out from the label file.
     labels = FileUtil.loadLabels(activity, getLabelPath());
+//    labels = Arrays.asList(activity.getResources().getStringArray(R.array.labels));
+    Log.d("Labels: ", "" +  labels);
+    Log.d("Size: ", "" + labels.size());
 
     // Reads type and shape of input and output tensors, respectively.
     int imageTensorIndex = 0;

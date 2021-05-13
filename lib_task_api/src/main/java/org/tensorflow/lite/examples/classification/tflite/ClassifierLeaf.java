@@ -39,6 +39,6 @@ public class ClassifierLeaf extends Classifier {
     // you can download this file from
     // see build.gradle for where to obtain this file. It should be auto
     // downloaded into assets.
-    return "leaf_model.tflite";
+    return "model_2.0.tflite";
   }
 }

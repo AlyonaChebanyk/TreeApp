@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
     val RESULT_LOAD_IMG = 1
     var counter = 0
 
-    private val CAMERA_REQUEST = 1888
-    private val MY_CAMERA_PERMISSION_CODE = 100
+//    private val CAMERA_REQUEST = 1888
+//    private val MY_CAMERA_PERMISSION_CODE = 100
     val dataForDatabase = mutableListOf<Family2>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
