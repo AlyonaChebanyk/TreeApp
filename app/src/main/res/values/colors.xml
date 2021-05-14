@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_color">#F5EFE1</color>
+    <color name="background_color_dark">#351E14</color>
     <color name="tfe_semi_transparent">#66000000</color>
 </resources>

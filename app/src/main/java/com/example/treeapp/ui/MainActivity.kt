@@ -38,15 +38,13 @@ class MainActivity : AppCompatActivity() {
     val RESULT_LOAD_IMG = 1
     var counter = 0
 
-//    private val CAMERA_REQUEST = 1888
+    //    private val CAMERA_REQUEST = 1888
 //    private val MY_CAMERA_PERMISSION_CODE = 100
     val dataForDatabase = mutableListOf<Family2>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
 //        loadData()
 //        loadGenus()
 //        loadSpecies()
@@ -256,7 +254,7 @@ class MainActivity : AppCompatActivity() {
                             )
                         )
                     }
-                    if (!speciesFullList.contains(data.species.scientificName)){
+                    if (!speciesFullList.contains(data.species.scientificName)) {
                         speciesFullList.add(data.species.scientificName)
                         genusMap[data.species.genus]!!.add(data.species.scientificName to data.species.commonName)
                         familyImages[data.species.family]!!.add(data.species.imageUrl)
@@ -340,7 +338,7 @@ class MainActivity : AppCompatActivity() {
                     if (!genusList.contains(data.species.genus)) {
                         genusList.add(data.species.genus)
                         dataForDatabase.forEachIndexed { index, family2 ->
-                            if (family2.name == data.species.family){
+                            if (family2.name == data.species.family) {
                                 dataForDatabase[index].genus.add(
                                     Genus2(
                                         data.species.genus,
@@ -350,7 +348,7 @@ class MainActivity : AppCompatActivity() {
                                 )
                             }
                         }
-                        for (family in dataForDatabase){
+                        for (family in dataForDatabase) {
                             db.collection("family").document(family.name).set(family)
                         }
                     }
@@ -446,7 +444,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-            for (family in dataForDatabase){
+            for (family in dataForDatabase) {
                 db.collection("family").document(family.name).set(family)
             }
 
@@ -517,10 +515,10 @@ class MainActivity : AppCompatActivity() {
 //                        if (genus.equals(data.species.genus)){
 //                            dataForDatabase[familyIndex].genus.indexOf(genus)
 //                        }
-                    if (!speciesList.contains(data.species.scientificName)){
+                    if (!speciesList.contains(data.species.scientificName)) {
                         speciesList.add(data.species.scientificName)
                         dataForDatabase.forEachIndexed { familyIndex, family2 ->
-                            if (family2.name == data.species.family){
+                            if (family2.name == data.species.family) {
                                 dataForDatabase[familyIndex].genus.forEachIndexed { index, genus2 ->
                                     if (genus2.name == data.species.genus) {
                                         dataForDatabase[familyIndex].genus[index].species.add(
@@ -547,7 +545,7 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                         }
-                        for (family in dataForDatabase){
+                        for (family in dataForDatabase) {
                             db.collection("family").document(family.name).set(family)
                         }
                     }

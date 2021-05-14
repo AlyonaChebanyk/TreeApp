@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/infoFragment"
+        android:icon="@drawable/ic_book"
+        android:title="Info"/>
+
+    <item
+        android:id="@+id/atlasFragment"
+        android:icon="@drawable/ic_menu_book"
+        android:title="Atlas"/>
+
+    <item
+        android:id="@+id/recognitionFragment"
+        android:icon="@drawable/ic_camera_alt"
+        android:title="Recognize"/>
+
+    <item
+        android:id="@+id/testFragment"
+        android:icon="@drawable/ic_checklist"
+        android:title="Test"/>
+
+</menu>
