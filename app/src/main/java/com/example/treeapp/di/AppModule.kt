@@ -1,22 +1,12 @@
 package com.example.treeapp.di
 
-import com.example.treeapp.Constants
-import com.example.treeapp.network.ApiService
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.example.treeapp.Repository
+import com.example.treeapp.ui.test_page.test_passing.TestPresenter
+import com.example.treeapp.ui.test_page.test_result.TestResultPresenter
 import org.koin.dsl.module
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
-val networkModule = module {
-    single { provideRetrofit(Constants.BASE_URL) }
-    single { provideApiService(get()) }
+val appModule = module {
+    factory { TestPresenter(get()) }
+    factory { TestResultPresenter() }
+    single { Repository() }
 }
-//"https://tree-app123.herokuapp.com/"
-fun provideRetrofit(url: String): Retrofit = Retrofit.Builder()
-    .baseUrl(url)
-    .addConverterFactory(GsonConverterFactory.create())
-    .addCallAdapterFactory(CoroutineCallAdapterFactory())
-    .build()
-
-fun provideApiService(retrofit: Retrofit): ApiService =
-    retrofit.create(ApiService::class.java)

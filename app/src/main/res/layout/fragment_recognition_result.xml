@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".ui.RecognitionResultFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/recognitionToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recognition"
+            android:textSize="24sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCC"
+        app:layout_constraintTop_toBottomOf="@id/recognitionToolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/recognitionToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="center" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC" />
+
+            <TextView
+                android:id="@+id/plantCommonNameResultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Water oak"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/plantDescriptionResultTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="Tilia tomentosa is a deciduous tree growing to 20–35 m (66–115 ft) tall, with a trunk up to 2 m (7 ft) in diameter. The leaves are alternately arranged, rounded to triangular-ovate, 4–13 cm long and broad with a 2.5–4 cm petiole, green and mostly hairless above, densely white tomentose with white hairs below, and with a coarsely toothed margin. The flowers are pale yellow, hermaphrodite, produced in cymes of three to ten in mid to late summer with a pale green subtending leafy bract; they have a strong scent and are pollinated by honeybees. The fruit is a dry nut-like drupe 8–10 mm long, downy, and slightly ribbed." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="See more..."
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/recognizeAgainButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="56dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/background_color"
+        android:text="Recognize again"
+        android:textAllCaps="false"
+        android:textColor="#706E67"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.499"/>
+
+    <Button
+        android:id="@+id/backToMainPageButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/background_color"
+        android:text="Back to main page"
+        android:textAllCaps="false"
+        android:textColor="#706E67"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.499"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
