@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav.xml"
-    app:startDestination="@id/mainPageFragment">
+    app:startDestination="@id/whatIsDendrologyFragment">
 
     <fragment
         android:id="@+id/mainPageFragment"
@@ -95,4 +95,40 @@
             android:id="@+id/action_recognitionFragment_to_speciesPageFragment"
             app:destination="@id/speciesPageFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/classificationTreeFragment"
+        android:name="com.example.treeapp.ui.info.ClassificationTreeFragment"
+        android:label="fragment_classification_tree"
+        tools:layout="@layout/fragment_classification_tree" />
+    <fragment
+        android:id="@+id/familyListFragment"
+        android:name="com.example.treeapp.ui.atlas.family.FamilyListFragment"
+        android:label="fragment_plant_list"
+        tools:layout="@layout/fragment_plant_list" />
+    <fragment
+        android:id="@+id/taxonomyTreeFragment"
+        android:name="com.example.treeapp.ui.info.TaxonomyTreeFragment"
+        android:label="fragment_taxonomy_tree"
+        tools:layout="@layout/fragment_taxonomy_tree" />
+    <fragment
+        android:id="@+id/treeIdentificationFragment"
+        android:name="com.example.treeapp.ui.info.TreeIdentificationFragment"
+        android:label="fragment_tree_identification"
+        tools:layout="@layout/fragment_tree_identification" />
+    <fragment
+        android:id="@+id/urbanEnvironmentInfluenceFragment"
+        android:name="com.example.treeapp.ui.info.UrbanEnvironmentInfluenceFragment"
+        android:label="fragment_urban_environment_influance"
+        tools:layout="@layout/fragment_urban_environment_influance" />
+    <fragment
+        android:id="@+id/whatIsDendrologyFragment"
+        android:name="com.example.treeapp.ui.info.WhatIsDendrologyFragment"
+        android:label="fragment_what_is_dendrology"
+        tools:layout="@layout/fragment_what_is_dendrology" />
+
+    <fragment
+        android:id="@+id/namingTreesFragment"
+        android:name="com.example.treeapp.ui.info.NamingTreesFragment"
+        android:label="fragment_naming_trees"
+        tools:layout="@layout/fragment_naming_trees"/>
 </navigation>

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/infoFragment"
+        android:id="@+id/whatIsDendrologyFragment"
         android:icon="@drawable/ic_book"
         android:title="Info"/>
 

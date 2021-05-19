@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.info.WhatIsDendrologyFragment"
+    tools:openDrawer="start">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="60dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/sideNavigationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_menu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="30dp"
+                android:text="What is Dendrology?"
+                android:textSize="22sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/what_is_dendrology" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="#CCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:text="Dendrology in Urban Foresty"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/dendrology_in_urban_foresty" />
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/borders"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Technical/Educactional Assistance" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Planning Assistance" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Potentional Recipients" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="2dp"
+                                android:text="· Tree identification\n· Disease and pest diagnosis\n· Urban wildlife habitat protection and enhancement\n· Hazard tree identification\n· Tree selection\n· Endangered species identification\n· Valuation"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="2dp"
+                                android:text="· Disease and pest diagnosis\n· Urban wildlife habitat protection and enhancement\n· Hazard tree identification\n· Tree selection\n· Endangered species identification\n· Valuation\n· Tree inventories\n· Urban forest assessment\n· Restoration of ecosystems\n· Urban forest master plan development\n· Public awareness programs\n· Urban habitat management\n· Urban landscape programs\n· Construction site planning\n· Hazard tree management plans "
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="2dp"
+                                android:text="· Tree-care companies\n· Local governments\n· Individual homeowners\n· School groups\n· Builders and developers\n· Engineers and architects\n· Utility companies\n· Non-profit organizations\n· Community and civic group "
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </TableRow>
+                </TableLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="#CCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:text="What is Tree?"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="15dp"
+                    android:text="A tree is a woody plant with several distinguishing characteristics:
+\n· Often reaches 15 feet or more in height at maturity
+\n· Has a single trunk or dominant multiple trunks
+\n· Has no normal branches on the lower trunk
+\n· Has at least a partially defined crown
+\n· Usually larger than other plants and tend to be long-lived
+\nThe growth form or shape, rather than size, is the feature that distinguishes a tree from
+other plants such as shrubs (Harris 1992). A shrub is a woody plant with multiple stems
+that is capable of growing to a height of 15 feet." />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!--    <include layout="@layout/side_navigation"/>-->
+
+    <!--    <com.google.android.material.navigation.NavigationView-->
+    <!--        android:background="@color/background_color"-->
+    <!--        android:id="@+id/navigationView"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        app:menu="@menu/navigation_drawer"/>-->
+
+</androidx.drawerlayout.widget.DrawerLayout>
