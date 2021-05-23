@@ -4,4 +4,5 @@ import com.arellomobile.mvp.MvpView
 
 interface TestResultView: MvpView {
     fun setAdapter(testResultAdapter: TestResultAdapter)
+    fun displayNumberOfCorrectAnswers(correctAnswers: Int)
 }

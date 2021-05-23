@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -39,8 +38,6 @@ class TestResultFragment : MvpAppCompatFragment(), TestResultView {
 
         presenter.setData(habitImages, leafImages, correctAnswers, wrongAnswers)
 
-        resultTextView.text = (10 - wrongAnswers.size).toString()
-
         passTestAgainButton.setOnClickListener {
             findNavController().navigate(R.id.action_testResultFragment_to_testFragment)
         }
@@ -55,5 +52,9 @@ class TestResultFragment : MvpAppCompatFragment(), TestResultView {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = testResultAdapter
         }
+    }
+
+    override fun displayNumberOfCorrectAnswers(correctAnswers: Int) {
+        resultTextView.text = correctAnswers.toString()
     }
 }

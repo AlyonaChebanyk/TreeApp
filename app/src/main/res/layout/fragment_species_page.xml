@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".ui.atlas.genus.genus_page.GenusPageFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/speciesPageToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_arrow" />
+
+        <TextView
+            android:id="@+id/speciesNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Algerian oak"
+            android:textSize="24sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/speciesPageToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="120dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/speciesImageView"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scaleType="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/speciesDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Quercus canariensis is a medium-sized deciduous to semi-evergreen tree growing to 20–30 m tall with a trunk up to 1.5 m diameter. The leaves are 10–15 cm long and 6–8 cm broad, with 6-12 pairs of shallow lobes. The flowers are catkins; the fruit is an acorn 2.5 cm long and 2 cm broad, in a shallow cup"
+                app:layout_constraintTop_toBottomOf="@id/speciesImageView" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toBottomOf="@id/speciesDescriptionTextView" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/speciesDescriptionTextView"
+                android:text="Family common name: "
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/familyNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/text4"
+                app:layout_constraintTop_toTopOf="@id/text4"
+                android:text="Beech family"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"/>
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Genus:"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text4" />
+
+            <TextView
+                android:id="@+id/genusNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/text2"
+                app:layout_constraintTop_toTopOf="@id/text2"
+                android:text="Quercus"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toBottomOf="@id/genusNameTextView"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/genusNameTextView"
+                android:id="@+id/flowerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:text="Flower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/flowerRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/flowerLayout"
+                android:id="@+id/leafLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:text="Leaf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/leafRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/leafLayout"
+                android:id="@+id/habitLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:text="Habit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/habitRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/habitLayout"
+                android:id="@+id/fruitLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:text="Fruit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/fruitRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/fruitLayout"
+                android:id="@+id/barkLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:text="Bark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/barkRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.info.ClassificationTreeFragment"
+    tools:openDrawer="start">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="60dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/sideNavigationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_menu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="30dp"
+                android:text="Classification of Trees"
+                android:textSize="22sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/classification_of_trees" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="#CCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:text="Classification Definitions"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/classification_definitions" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:text="Definitions of classification taxonomy." />
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/borders"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.06"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Classification"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Definition"
+                            android:textSize="12sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.06"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Kingdom"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/kingdom_definition"
+                            android:textSize="12sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.06"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Division"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/division_definition"
+                            android:textSize="12sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.06"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Class"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/class_definition"
+                            android:textSize="12sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.06"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Order"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/order_description"
+                            android:textSize="12sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.06"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Family"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/family_description"
+                            android:textSize="12sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.06"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Genus"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/genus_description"
+                            android:textSize="12sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.06"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Species"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/species_definition"
+                            android:textSize="12sp" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingHorizontal="15dp"
+                    android:text="Classification structure of the loblolly pine, a gymnosperm, and a southern red
+oak, an angiosperm
+" />
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/borders"
+                    android:gravity="center"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Classification" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Loblolly Pine" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Southern Red Oak" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Kingdom" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Planta" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Planta" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Division" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Spermatophyta" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Spermatophyta" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Class" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Gymnospermae" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Angiospermae " />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Order" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Coniferales" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Dicotyledeae" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Family" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Pinaceae" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Fagaceae" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Genus" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Pinus" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Quercus" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Species" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Pinus taeda" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Quercus falcata" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Common name" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Loblolly pine" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:paddingHorizontal="2dp"
+                            android:text="Southern red oak" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingHorizontal="15dp"
+                    android:text="Definitions related to tree species identification" />
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/borders"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Term" />
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Definition" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Hybrid" />
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/hybrid_definition" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Variety" />
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/veriety_definition" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Cultivar" />
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/cultivar_definition" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Clone" />
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/clone_definition" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Natives" />
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/natives_definition" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borders">
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:text="Etotics" />
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:background="@drawable/borders"
+                            android:paddingHorizontal="2dp"
+                            android:text="@string/exotics_definition" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+<!--        <include layout="@layout/side_navigation"/>-->
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".ui.atlas.genus.genus_page.GenusPageFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/genusPageToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_arrow" />
+
+        <TextView
+            android:id="@+id/genusNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Fagus"
+            android:textSize="24sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/genusPageToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="?android:actionBarSize">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/genusImageView"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scaleType="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/genusDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Beech (Fagus) is a genus of deciduous trees in the family Fagaceae, native to temperate Europe, Asia, and North America. Recent classifications recognize 10 to 13 species in two distinct subgenera, Engleriana and Fagus. The Engleriana subgenus is found only in East Asia, distinctive for their low branches, often made up of several major trunks with yellowish bark. The better known Fagus subgenus beeches are high-branching with tall, stout trunks and smooth silver-grey bark. The European beech (Fagus sylvatica) is the most commonly cultivated.  Beeches are monoecious, bearing both male and female flowers on the same plant. The small flowers are unisexual, the female flowers borne in pairs, the male flowers wind-pollinating catkins. They are produced in spring shortly after the new leaves appear. The fruit of the beech tree, known as beechnuts or mast, is found in small burrs that drop from the tree in autumn. They are small, roughly triangular and edible, with a bitter, astringent, or mild and nut-like taste.  The European species Fagus sylvatica yields a utility timber that is tough but dimensionally unstable. It is widely used for furniture framing and carcase construction, flooring and engineering purposes, in plywood and in household items like plates, but rarely as a decorative wood. The timber can be used to build chalets, houses, and log cabins."
+                app:layout_constraintTop_toBottomOf="@id/genusImageView" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toBottomOf="@id/genusDescriptionTextView" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/genusDescriptionTextView"
+                android:text="Family: "
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/familyNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/text4"
+                app:layout_constraintTop_toTopOf="@id/text4"
+                android:text="Beech family"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"/>
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Species:"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text4" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/genusListRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toBottomOf="@id/text2"
+                tools:listitem="@layout/list_item" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toBottomOf="@id/genusListRecyclerView" />
+
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Images:"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/genusListRecyclerView"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                app:layout_constraintTop_toBottomOf="@id/text3"
+                android:id="@+id/genusImagesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/image_item"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
