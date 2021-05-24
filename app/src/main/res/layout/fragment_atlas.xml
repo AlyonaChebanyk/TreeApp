@@ -10,8 +10,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="?android:actionBarSize"
-        >
+        android:layout_height="?android:actionBarSize">
         <ImageButton
             android:id="@+id/backToMainPageButton"
             android:layout_width="20dp"

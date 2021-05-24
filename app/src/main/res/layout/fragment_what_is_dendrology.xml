@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".ui.info.WhatIsDendrologyFragment"
-    tools:openDrawer="start">
+    tools:context=".ui.info.WhatIsDendrologyFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="60dp">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:paddingBottom="60dp">-->
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -197,7 +194,7 @@ other plants such as shrubs (Harris 1992). A shrub is a woody plant with multipl
 that is capable of growing to a height of 15 feet." />
             </LinearLayout>
         </ScrollView>
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <!--    <include layout="@layout/side_navigation"/>-->
 
@@ -208,4 +205,4 @@ that is capable of growing to a height of 15 feet." />
     <!--        android:layout_height="match_parent"-->
     <!--        app:menu="@menu/navigation_drawer"/>-->
 
-</androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>
