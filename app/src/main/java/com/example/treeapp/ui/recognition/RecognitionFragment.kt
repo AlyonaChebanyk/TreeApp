@@ -86,7 +86,7 @@ class RecognitionFragment : MvpAppCompatFragment(), RecognitionView,
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        seeMoreTextView.setOnClickListener {
+        recognitionCommonNameTextView.setOnClickListener {
             val speciesName = recognitionTextView.text.toString()
             speciesName.replace(" ", " ")
             GlobalScope.launch {

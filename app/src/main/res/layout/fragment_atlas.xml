@@ -12,12 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
         >
-<!--        <ImageButton-->
-<!--            android:id="@+id/backToMainPageButton"-->
-<!--            android:layout_width="20dp"-->
-<!--            android:layout_height="20dp"-->
-<!--            android:src="@drawable/ic_baseline_arrow"-->
-<!--            android:background="@android:color/transparent"/>-->
+        android:layout_height="?android:actionBarSize">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
