@@ -10,7 +10,8 @@
     android:orientation="vertical"
     android:padding="8dp"
     app:behavior_hideable="true"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:backgroundTint="@color/background_color">
 
     <LinearLayout
         android:id="@+id/gestureLayout"
@@ -27,89 +28,217 @@
 <!--            android:layout_gravity="center"-->
 <!--            android:src="@drawable/icn_chevron_up" />-->
 
-        <LinearLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Results:"
+            android:textSize="22sp"
+            android:paddingStart="10dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCC"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/oneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1."
+                app:layout_constraintBottom_toBottomOf="@id/recognitionImageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="10dp"
+                android:textSize="22sp"
+                android:paddingBottom="10dp"/>
+
+            <ImageView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/oneTextView"
+                android:id="@+id/recognitionImageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/leaf_2"/>
+
+            <TextView
+                android:id="@+id/recognitionCommonNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/recognitionImageView"
+                app:layout_constraintTop_toTopOf="@id/recognitionImageView"
+                android:layout_marginStart="10dp"
+                android:text="Red maple"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/recognitionTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
+                app:layout_constraintStart_toEndOf="@id/recognitionImageView"
+                app:layout_constraintBottom_toBottomOf="@id/recognitionImageView"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Acer Rubrum"
+                android:textColor="#444"
                 android:textSize="16sp" />
 
             <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/recognitionImageView"
+                android:paddingBottom="10dp"
                 android:id="@+id/recognitionValueTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="20sp"/>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCC"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/twoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2."
+                app:layout_constraintBottom_toBottomOf="@id/recognition1ImageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="10dp"
+                android:textSize="22sp"
+                android:paddingBottom="10dp"/>
+
+            <ImageView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/twoTextView"
+                android:id="@+id/recognition1ImageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/leaf_1"/>
+
+            <TextView
+                android:id="@+id/recognition1CommonNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/recognition1ImageView"
+                app:layout_constraintTop_toTopOf="@id/recognition1ImageView"
+                android:layout_marginStart="10dp"
+                android:text="Norway maple"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/recognition1TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp" />
+                app:layout_constraintStart_toEndOf="@id/recognition1ImageView"
+                app:layout_constraintBottom_toBottomOf="@id/recognition1ImageView"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Acer Platanoides"
+                android:textColor="#444"
+                android:textSize="16sp" />
 
             <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/recognition1ImageView"
+                android:paddingBottom="10dp"
                 android:id="@+id/recognition1ValueTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp" />
+                android:textSize="20sp"/>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCC"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/threeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3."
+                app:layout_constraintBottom_toBottomOf="@id/recognition2ImageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="10dp"
+                android:textSize="22sp"
+                android:paddingBottom="10dp"/>
+
+            <ImageView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/threeTextView"
+                android:id="@+id/recognition2ImageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/leaf_3"/>
+
+            <TextView
+                android:id="@+id/recognition2CommonNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/recognition2ImageView"
+                app:layout_constraintTop_toTopOf="@id/recognition2ImageView"
+                android:layout_marginStart="10dp"
+                android:text="Sugar maple"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp" />
+
+            <TextView
                 android:id="@+id/recognition2TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp" />
+                app:layout_constraintStart_toEndOf="@id/recognition2ImageView"
+                app:layout_constraintBottom_toBottomOf="@id/recognition2ImageView"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Acer Saccharum"
+                android:textColor="#444"
+                android:textSize="16sp" />
 
             <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/recognition2ImageView"
+                android:paddingBottom="10dp"
                 android:id="@+id/recognition2ValueTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp" />
+                android:textSize="20sp"/>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_marginTop="8dp"
-            android:background="@android:color/darker_gray" />
 
-        <TextView
-            android:id="@+id/seeMoreTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="See more..."/>
-    </LinearLayout>
 
-<!--    <LinearLayout-->
+        <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:orientation="horizontal">-->
@@ -324,4 +453,5 @@
 <!--            android:entries="@array/tfe_ic_devices"-->
 <!--            android:prompt="@string/tfe_ic_device" />-->
 <!--    </RelativeLayout>-->
+</LinearLayout>
 </LinearLayout>
