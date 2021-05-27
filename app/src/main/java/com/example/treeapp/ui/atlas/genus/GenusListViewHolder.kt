@@ -15,11 +15,11 @@ class GenusListViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
     fun bind(genus: Genus) {
         with(view) {
             plantNameTextView.text = genus.name
-            plantDescriptionTextView.text =
-                if (genus.description.length < 200)
-                    genus.description
-                else
-                    genus.description.slice(0..200) + "..."
+//            plantDescriptionTextView.text =
+//                if (genus.description.length < 200)
+//                    genus.description
+//                else
+//                    genus.description.slice(0..200) + "..."
             val imageUrl = genus.images.shuffled().take(1)[0]
             Glide.with(view).load(imageUrl).into(plantImageView)
 

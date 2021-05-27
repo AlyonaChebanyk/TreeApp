@@ -20,7 +20,8 @@ class FamilyListFragment : MvpAppCompatFragment(), FamilyListView {
     @ProvidePresenter
     fun provideFamilyListPresenter() = get<FamilyListPresenter>()
 
-    private val searchText = arguments?.getString("searchText") ?:""
+    private lateinit var searchText: String
+//    private val searchText = arguments?.getString("searchText") ?:""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +33,7 @@ class FamilyListFragment : MvpAppCompatFragment(), FamilyListView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        searchText = arguments?.getString("searchText") ?:""
         presenter.loadData(searchText)
     }
 

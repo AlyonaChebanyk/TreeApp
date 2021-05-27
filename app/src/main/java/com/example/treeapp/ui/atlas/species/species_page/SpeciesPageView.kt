@@ -12,6 +12,8 @@ interface SpeciesPageView : MvpView {
     fun setDescription(description: String)
     fun setGenus(genus: String)
     fun setFamily(family: String)
+    fun setScientificName(name: String)
+    fun setSpeciesName(species: String)
 
     fun hideFlowerLayout()
     fun hideLeafLayout()
