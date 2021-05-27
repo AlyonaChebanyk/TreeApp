@@ -28,9 +28,6 @@ class AtlasFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        backToMainPageButton.setOnClickListener {
-            findNavController().navigate(R.id.action_atlasFragment_to_mainPageFragment)
-        }
 
         plantSearchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean = false

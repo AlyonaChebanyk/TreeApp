@@ -60,84 +60,91 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#CCC"
-                app:layout_constraintTop_toBottomOf="@id/speciesImageView" />
-
-            <TextView
-                android:id="@+id/text4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/speciesImageView"
-                android:text="Family: "
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"
-                app:layout_constraintStart_toStartOf="parent"/>
-            <TextView
-                android:id="@+id/familyNameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/text4"
-                app:layout_constraintTop_toTopOf="@id/text4"
-                android:text="Beech family"
-                android:textSize="20sp"
-                android:layout_marginStart="5dp"/>
-            <TextView
-                android:id="@+id/text2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Genus:"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text4" />
+                android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:id="@+id/genusNameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/text2"
-                app:layout_constraintTop_toTopOf="@id/text2"
-                android:text="Quercus"
-                android:textSize="20sp"
-                android:layout_marginStart="5dp"/>
-
-            <TextView
-                android:id="@+id/text3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Species:"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text2" />
-
-            <TextView
-                android:id="@+id/speciesScientificNameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/text3"
-                app:layout_constraintTop_toTopOf="@id/text3"
-                android:text="Quercus"
-                android:textSize="20sp"
-                android:layout_marginStart="5dp"/>
-
-            <TextView
-                android:id="@+id/speciesDescriptionTextView"
+            <TableLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/tableLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="15dp"
-                android:layout_marginTop="10dp"
-                android:text="Quercus canariensis is a medium-sized deciduous to semi-evergreen tree growing to 20–30 m tall with a trunk up to 1.5 m diameter. The leaves are 10–15 cm long and 6–8 cm broad, with 6-12 pairs of shallow lobes. The flowers are catkins; the fruit is an acorn 2.5 cm long and 2 cm broad, in a shallow cup"
-                app:layout_constraintTop_toBottomOf="@id/speciesScientificNameTextView" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/speciesImageView"
+                android:gravity="center">
+                <TableRow>
+                    <TextView
+                        android:id="@+id/text4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Family: "
+                        android:textSize="16sp"
+                        android:layout_marginStart="20dp"
+                        />
+                    <TextView
+                        android:id="@+id/familyNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Beech family"
+                        android:textSize="18sp"
+                        android:layout_marginStart="60dp"/>
+                </TableRow>
 
+                <TableRow>
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Genus:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/genusNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quercus"
+                        android:textSize="18sp"
+                        android:layout_marginStart="60dp"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Species:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/speciesScientificNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quercus"
+                        android:textSize="18sp"
+                        android:layout_marginStart="60dp"/>
+                </TableRow>
+            </TableLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#CCC"
-                app:layout_constraintTop_toBottomOf="@id/speciesScientificNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/tableLayout"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/speciesDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Quercus canariensis is a medium-sized deciduous to semi-evergreen tree growing to 20–30 m tall with a trunk up to 1.5 m diameter. The leaves are 10–15 cm long and 6–8 cm broad, with 6-12 pairs of shallow lobes. The flowers are catkins; the fruit is an acorn 2.5 cm long and 2 cm broad, in a shallow cup"
+                app:layout_constraintTop_toBottomOf="@id/tableLayout" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                app:layout_constraintTop_toBottomOf="@id/speciesDescriptionTextView"
                 android:layout_marginTop="5dp"/>
 
             <LinearLayout
