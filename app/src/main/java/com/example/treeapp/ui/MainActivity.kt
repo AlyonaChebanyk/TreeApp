@@ -1,33 +1,26 @@
 package com.example.treeapp.ui
 
-import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.treeapp.R
-import com.example.treeapp.Repository
 import com.example.treeapp.entities.Family2
 import com.example.treeapp.entities.Genus2
 import com.example.treeapp.entities.Images
 import com.example.treeapp.entities.Species2
 import com.example.treeapp.network.ApiService
-import com.example.treeapp.util.FileUtil
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import okhttp3.MediaType
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import org.koin.android.ext.android.inject
-import timber.log.Timber
-import java.io.File
-import java.io.FileNotFoundException
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     val RESULT_LOAD_IMG = 1
     var counter = 0
 
-//    private val CAMERA_REQUEST = 1888
+    //    private val CAMERA_REQUEST = 1888
 //    private val MY_CAMERA_PERMISSION_CODE = 100
     val dataForDatabase = mutableListOf<Family2>()
 
@@ -46,7 +39,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        bottomNavigation.setupWithNavController(navController)
 //        loadData()
 //        loadGenus()
 //        loadSpecies()
@@ -256,7 +251,7 @@ class MainActivity : AppCompatActivity() {
                             )
                         )
                     }
-                    if (!speciesFullList.contains(data.species.scientificName)){
+                    if (!speciesFullList.contains(data.species.scientificName)) {
                         speciesFullList.add(data.species.scientificName)
                         genusMap[data.species.genus]!!.add(data.species.scientificName to data.species.commonName)
                         familyImages[data.species.family]!!.add(data.species.imageUrl)
@@ -340,7 +335,7 @@ class MainActivity : AppCompatActivity() {
                     if (!genusList.contains(data.species.genus)) {
                         genusList.add(data.species.genus)
                         dataForDatabase.forEachIndexed { index, family2 ->
-                            if (family2.name == data.species.family){
+                            if (family2.name == data.species.family) {
                                 dataForDatabase[index].genus.add(
                                     Genus2(
                                         data.species.genus,
@@ -350,7 +345,7 @@ class MainActivity : AppCompatActivity() {
                                 )
                             }
                         }
-                        for (family in dataForDatabase){
+                        for (family in dataForDatabase) {
                             db.collection("family").document(family.name).set(family)
                         }
                     }
@@ -446,7 +441,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-            for (family in dataForDatabase){
+            for (family in dataForDatabase) {
                 db.collection("family").document(family.name).set(family)
             }
 
@@ -517,10 +512,10 @@ class MainActivity : AppCompatActivity() {
 //                        if (genus.equals(data.species.genus)){
 //                            dataForDatabase[familyIndex].genus.indexOf(genus)
 //                        }
-                    if (!speciesList.contains(data.species.scientificName)){
+                    if (!speciesList.contains(data.species.scientificName)) {
                         speciesList.add(data.species.scientificName)
                         dataForDatabase.forEachIndexed { familyIndex, family2 ->
-                            if (family2.name == data.species.family){
+                            if (family2.name == data.species.family) {
                                 dataForDatabase[familyIndex].genus.forEachIndexed { index, genus2 ->
                                     if (genus2.name == data.species.genus) {
                                         dataForDatabase[familyIndex].genus[index].species.add(
@@ -547,7 +542,7 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                         }
-                        for (family in dataForDatabase){
+                        for (family in dataForDatabase) {
                             db.collection("family").document(family.name).set(family)
                         }
                     }
@@ -629,4 +624,36 @@ class MainActivity : AppCompatActivity() {
     }
 
 //    override fun onBackPressed() {}
+
+    fun showDrawer(){
+        drawer_layout.openDrawer(GravityCompat.START)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        whatIsDendrologyTextView.setOnClickListener {
+            findNavController(this, R.id.nav_host_fragment).navigate(R.id.whatIsDendrologyFragment)
+            drawer_layout.closeDrawer(GravityCompat.START)
+        }
+        taxonomyTreeTextView.setOnClickListener {
+            findNavController(this, R.id.nav_host_fragment).navigate(R.id.taxonomyTreeFragment)
+            drawer_layout.closeDrawer(GravityCompat.START)
+        }
+        classificationTreeTextView.setOnClickListener {
+            findNavController(this, R.id.nav_host_fragment).navigate(R.id.classificationTreeFragment)
+            drawer_layout.closeDrawer(GravityCompat.START)
+        }
+        namingTreesTextView.setOnClickListener {
+            findNavController(this, R.id.nav_host_fragment).navigate(R.id.namingTreesFragment)
+            drawer_layout.closeDrawer(GravityCompat.START)
+        }
+        treeIdentificationTextView.setOnClickListener {
+            findNavController(this, R.id.nav_host_fragment).navigate(R.id.treeIdentificationFragment)
+            drawer_layout.closeDrawer(GravityCompat.START)
+        }
+        urbanEnvironmentInfluenceTextView.setOnClickListener {
+            findNavController(this, R.id.nav_host_fragment).navigate(R.id.urbanEnvironmentInfluenceFragment)
+            drawer_layout.closeDrawer(GravityCompat.START)
+        }
+    }
 }
