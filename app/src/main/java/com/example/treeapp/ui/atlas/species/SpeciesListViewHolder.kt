@@ -20,11 +20,12 @@ class SpeciesListViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
                     species.commonName
                 else
                     species.scientificName
-            plantDescriptionTextView.text =
-                if (species.description.length < 200)
-                    species.description
-                else
-                    species.description.slice(0..200) + "..."
+            plantScientificNameTextView.text = species.scientificName
+//            plantDescriptionTextView.text =
+//                if (species.description.length < 200)
+//                    species.description
+//                else
+//                    species.description.slice(0..200) + "..."
             Glide.with(view).load(species.imageUrl).into(plantImageView)
             Timber.d(species.imageUrl)
 

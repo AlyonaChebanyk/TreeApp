@@ -4,12 +4,13 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.treeapp.entities.Species
+import androidx.viewpager2.adapter.FragmentViewHolder
 import com.example.treeapp.ui.atlas.family.FamilyListFragment
 import com.example.treeapp.ui.atlas.genus.GenusListFragment
 import com.example.treeapp.ui.atlas.species.SpeciesListFragment
 
-class PlantViewPagerAdapter(activity: FragmentActivity): FragmentStateAdapter(activity) {
+
+class PlantViewPagerAdapter(val activity: FragmentActivity): FragmentStateAdapter(activity) {
 //    var familyFragment = FamilyListFragment()
 //    var genusFragment = GenusListFragment()
 
@@ -31,5 +32,23 @@ class PlantViewPagerAdapter(activity: FragmentActivity): FragmentStateAdapter(ac
             }
             else -> Fragment()
         }
+    }
+
+    override fun getItemId(position: Int) = position.toLong()
+
+    override fun containsItem(itemId: Long): Boolean {
+        return arrayListOf(0, 1, 2).any { it.toLong() == itemId }
+    }
+
+    override fun onBindViewHolder(
+        holder: FragmentViewHolder,
+        position: Int,
+        payloads: MutableList<Any>
+    ) {
+        super.onBindViewHolder(holder, position, payloads)
+
+        createFragment(position)
+
+        //manual update fragment
     }
 }

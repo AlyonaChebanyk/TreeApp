@@ -18,11 +18,12 @@ class FamilyListViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
                     family.commonName
                 else
                     family.name
-            plantDescriptionTextView.text =
-                if (family.description.length < 180)
-                    family.description
-                else
-                    family.description.slice(0..180) + "..."
+            plantScientificNameTextView.text = family.name
+//            plantDescriptionTextView.text =
+//                if (family.description.length < 180)
+//                    family.description
+//                else
+//                    family.description.slice(0..180) + "..."
             val imageUrl = family.images.shuffled().take(1)[0]
             Glide.with(view).load(imageUrl).into(plantImageView)
 

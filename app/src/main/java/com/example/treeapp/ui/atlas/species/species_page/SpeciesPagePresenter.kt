@@ -20,14 +20,18 @@ class SpeciesPagePresenter : MvpPresenter<SpeciesPageView>() {
 
     fun setData(species: Species) {
         viewState.setImage(species.imageUrl)
-        viewState.setDescription(species.description)
+        if (species.description.isNotBlank())
+            viewState.setDescription(species.description)
         viewState.setGenus(species.genus)
         viewState.setFamily(species.family)
+        viewState.setScientificName(species.scientificName)
+        species.commonName?.let { viewState.setSpeciesName(it) }
 
         if (species.images.habit.isNullOrEmpty())
             viewState.hideHabitLayout()
         else{
             habitAdapter = ImageListAdapter(species.images.habit)
+            viewState.setHabitAdapter(habitAdapter)
             habitAdapter.notifyDataSetChanged()
         }
 
@@ -35,6 +39,7 @@ class SpeciesPagePresenter : MvpPresenter<SpeciesPageView>() {
             viewState.hideBarkLayout()
         else{
             barkAdapter = ImageListAdapter(species.images.bark)
+            viewState.setBarkAdapter(barkAdapter)
             barkAdapter.notifyDataSetChanged()
         }
 
@@ -42,6 +47,7 @@ class SpeciesPagePresenter : MvpPresenter<SpeciesPageView>() {
             viewState.hideFlowerLayout()
         else{
             flowerAdapter = ImageListAdapter(species.images.flower)
+            viewState.setFlowerAdapter(flowerAdapter)
             flowerAdapter.notifyDataSetChanged()
         }
 
@@ -49,6 +55,7 @@ class SpeciesPagePresenter : MvpPresenter<SpeciesPageView>() {
             viewState.hideFruitLayout()
         else{
             fruitAdapter = ImageListAdapter(species.images.fruit)
+            viewState.setFruitAdapter(fruitAdapter)
             fruitAdapter.notifyDataSetChanged()
         }
 
@@ -56,6 +63,7 @@ class SpeciesPagePresenter : MvpPresenter<SpeciesPageView>() {
             viewState.hideLeafLayout()
         else{
             leafAdapter = ImageListAdapter(species.images.leaf)
+            viewState.setLeafAdapter(leafAdapter)
             leafAdapter.notifyDataSetChanged()
         }
 

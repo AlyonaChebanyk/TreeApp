@@ -45,37 +45,29 @@
                 android:background="#CCC"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/speciesImageView"
-                android:layout_width="260dp"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
                 android:layout_marginTop="10dp"
                 android:scaleType="center"
+                app:riv_corner_radius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/speciesDescriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="15dp"
-                android:layout_marginTop="10dp"
-                android:text="Quercus canariensis is a medium-sized deciduous to semi-evergreen tree growing to 20–30 m tall with a trunk up to 1.5 m diameter. The leaves are 10–15 cm long and 6–8 cm broad, with 6-12 pairs of shallow lobes. The flowers are catkins; the fruit is an acorn 2.5 cm long and 2 cm broad, in a shallow cup"
-                app:layout_constraintTop_toBottomOf="@id/speciesImageView" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#CCC"
-                app:layout_constraintTop_toBottomOf="@id/speciesDescriptionTextView" />
+                app:layout_constraintTop_toBottomOf="@id/speciesImageView" />
 
             <TextView
                 android:id="@+id/text4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/speciesDescriptionTextView"
-                android:text="Family common name: "
+                app:layout_constraintTop_toBottomOf="@id/speciesImageView"
+                android:text="Family: "
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
@@ -110,15 +102,46 @@
                 android:textSize="20sp"
                 android:layout_marginStart="5dp"/>
 
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Species:"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text2" />
+
+            <TextView
+                android:id="@+id/speciesScientificNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/text3"
+                app:layout_constraintTop_toTopOf="@id/text3"
+                android:text="Quercus"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/speciesDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Quercus canariensis is a medium-sized deciduous to semi-evergreen tree growing to 20–30 m tall with a trunk up to 1.5 m diameter. The leaves are 10–15 cm long and 6–8 cm broad, with 6-12 pairs of shallow lobes. The flowers are catkins; the fruit is an acorn 2.5 cm long and 2 cm broad, in a shallow cup"
+                app:layout_constraintTop_toBottomOf="@id/speciesScientificNameTextView" />
+
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#CCC"
-                app:layout_constraintTop_toBottomOf="@id/genusNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/speciesScientificNameTextView"
                 android:layout_marginTop="5dp"/>
 
             <LinearLayout
-                app:layout_constraintTop_toBottomOf="@id/genusNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/speciesDescriptionTextView"
                 android:id="@+id/flowerLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

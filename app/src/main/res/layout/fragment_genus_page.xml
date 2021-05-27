@@ -45,15 +45,16 @@
                 android:background="#CCC"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/genusImageView"
-                android:layout_width="260dp"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
                 android:layout_marginTop="10dp"
                 android:scaleType="center"
+                app:riv_corner_radius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"  />
 
             <TextView
                 android:id="@+id/genusDescriptionTextView"

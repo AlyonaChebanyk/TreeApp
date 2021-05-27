@@ -67,6 +67,14 @@ class SpeciesPageFragment : MvpAppCompatFragment(), SpeciesPageView {
         genusNameTextView.text = genus
     }
 
+    override fun setScientificName(name: String) {
+        speciesScientificNameTextView.text = name
+    }
+
+    override fun setSpeciesName(species: String) {
+        speciesNameTextView.text = species
+    }
+
     override fun hideBarkLayout() {
         barkLayout.visibility = View.GONE
     }
