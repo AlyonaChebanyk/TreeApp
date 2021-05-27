@@ -26,14 +26,34 @@
         app:layout_constraintStart_toEndOf="@id/plantImageView"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
-        android:id="@+id/plantScientificNameTextView"
+        android:id="@+id/plantCommonNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:paddingEnd="190dp"
         app:layout_constraintStart_toEndOf="@id/plantImageView"
         app:layout_constraintTop_toBottomOf="@id/plantNameTextView" />
+<!--    <TextView-->
+<!--        android:id="@+id/plantDescriptionTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:paddingEnd="190dp"-->
+<!--        android:text="Tilia tomentosa is a deciduous tree growing to 20–35 m (66–115 ft) tall, with a trunk up to 2 m (7 ft) in diameter. The leaves are alternately arranged, rounded to triangular-ovate, 4–13 cm long and broad with a 2.5–4 cm petiole, green and mostly hairless above,  ... "-->
+<!--        app:layout_constraintStart_toEndOf="@id/plantImageView"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/plantNameTextView" />-->
+
+        <TextView
+            android:id="@+id/plantScientificNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:paddingEnd="190dp"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/plantImageView"
+            app:layout_constraintTop_toBottomOf="@id/plantNameTextView" />
 
     <View
         android:layout_width="match_parent"

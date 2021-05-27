@@ -26,7 +26,9 @@ class SpeciesListViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 //                    species.description
 //                else
 //                    species.description.slice(0..200) + "..."
+
             Glide.with(view).load(species.imageUrl).into(plantImageView)
+
             Timber.d(species.imageUrl)
 
             setOnClickListener {
