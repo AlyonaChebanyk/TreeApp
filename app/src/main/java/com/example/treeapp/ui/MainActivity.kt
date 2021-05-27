@@ -2,10 +2,12 @@ package com.example.treeapp.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.treeapp.R
@@ -34,107 +36,23 @@ class MainActivity : AppCompatActivity() {
     //    private val CAMERA_REQUEST = 1888
 //    private val MY_CAMERA_PERMISSION_CODE = 100
     val dataForDatabase = mutableListOf<Family2>()
+    private lateinit var header: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+//        header = nav_view.getHeaderView(0)
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         bottomNavigation.setupWithNavController(navController)
 //        loadData()
 //        loadGenus()
 //        loadSpecies()
 
-//        loadImageButton.setOnClickListener{
-//            loadFromGallery()
-//        }
     }
-
-    fun loadFromGallery() {
-        //load image from gallery
-
-        val photoPickerIntent = Intent(Intent.ACTION_PICK)
-        photoPickerIntent.type = "image/*"
-
-        // Получаем Package Manager
-        val manager = this.packageManager
-        // Получаем список обработчиков намерения
-        val list = manager.queryIntentActivities(photoPickerIntent, 0)
-
-        if (list.size > 0) {
-            //starting activity for result
-            startActivityForResult(photoPickerIntent, RESULT_LOAD_IMG)
-        } else {
-            Toast.makeText(this, "Невозможно обработать намерение!", Toast.LENGTH_LONG).show()
-        }
-
-    }
-
-//    fun loadFromCamera() {
-//
-//        counter++ //this is an int
-//
-//        val imageFileName = "JPEG_$counter" //make a better file name
-//
-//        val storageDir: File =
-//            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-//        val image = File.createTempFile(
-//            imageFileName,
-//            ".jpg",
-//            storageDir
-//        )
-//        val uri = Uri.fromFile(image)
-//        val takePhotoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//        takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri)
-//
-//        startActivityForResult(takePhotoIntent, CAMERA_REQUEST)
-//    }
-
-    //loading selected image to page
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (resultCode == Activity.RESULT_OK) {
-//            try {
-//                // if result is successful display loaded image
-//                val selectedImageUri: Uri = data!!.data!!
-//                val file: File = FileUtil.from(this, selectedImageUri)
-//                val filePart = MultipartBody.Part.createFormData(
-//                    "file", file.name, RequestBody.create(
-//                        MediaType.parse("image/*"), file
-//                    )
-//                )
-//                GlobalScope.launch {
-//                    val response = service.sentImageToServer(filePart)
-//                    Timber.d("Response $response")
-//                }
-//
-//            } catch (e: FileNotFoundException) {
-//                e.printStackTrace()
-//                Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show()
-//            }
-//        } else {
-//            Toast.makeText(this, "You haven't picked Image", Toast.LENGTH_LONG).show()
-//        }
-//    }
-//
-//    override fun onRequestPermissionsResult(
-//        requestCode: Int,
-//        permissions: Array<String?>,
-//        grantResults: IntArray
-//    ) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-//        if (requestCode == MY_CAMERA_PERMISSION_CODE) {
-//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show()
-//                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//                startActivityForResult(cameraIntent, CAMERA_REQUEST)
-//            } else {
-//                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show()
-//            }
-//        }
-//    }
 
     fun loadData() {
         val list = arrayListOf<String>()
@@ -625,12 +543,11 @@ class MainActivity : AppCompatActivity() {
 
 //    override fun onBackPressed() {}
 
-    fun showDrawer(){
+    fun showDrawer() {
         drawer_layout.openDrawer(GravityCompat.START)
     }
 
     override fun onStart() {
-        super.onStart()
         whatIsDendrologyTextView.setOnClickListener {
             findNavController(this, R.id.nav_host_fragment).navigate(R.id.whatIsDendrologyFragment)
             drawer_layout.closeDrawer(GravityCompat.START)
@@ -655,5 +572,39 @@ class MainActivity : AppCompatActivity() {
             findNavController(this, R.id.nav_host_fragment).navigate(R.id.urbanEnvironmentInfluenceFragment)
             drawer_layout.closeDrawer(GravityCompat.START)
         }
+
+//        with(header) {
+//            findViewById<View>(R.id.whatIsDendrologyTextView).setOnClickListener {
+//                this@MainActivity.findNavController(
+//                    R.id.nav_host_fragment
+//                ).navigate(R.id.whatIsDendrologyFragment)
+//            }
+//            findViewById<View>(R.id.taxonomyTreeTextView).setOnClickListener {
+//                findNavController(
+//                    R.id.nav_host_fragment
+//                ).navigate(R.id.taxonomyTreeFragment)
+//            }
+//            findViewById<View>(R.id.classificationTreeTextView).setOnClickListener {
+//                findNavController(
+//                    R.id.nav_host_fragment
+//                ).navigate(R.id.classificationTreeFragment)
+//            }
+//            findViewById<View>(R.id.namingTreesTextView).setOnClickListener {
+//                this@MainActivity.findNavController(
+//                    R.id.nav_host_fragment
+//                ).navigate(R.id.namingTreesFragment)
+//            }
+//            findViewById<View>(R.id.treeIdentificationTextView).setOnClickListener {
+//                findNavController(
+//                    R.id.nav_host_fragment
+//                ).navigate(R.id.treeIdentificationFragment)
+//            }
+//            findViewById<View>(R.id.urbanEnvironmentInfluenceTextView).setOnClickListener {
+//                findNavController(
+//                    R.id.nav_host_fragment
+//                ).navigate(R.id.urbanEnvironmentInfluenceFragment)
+//            }
+//        }
+        super.onStart()
     }
 }
